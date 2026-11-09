@@ -1,5 +1,4 @@
 
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Conix FPS AI</string>
     <string name="accessibility_description">User-enabled touch action service for offline game testing.</string>
