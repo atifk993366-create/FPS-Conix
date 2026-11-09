@@ -1,4 +1,4 @@
-# Conix FPS AI — Universal Android starter (v0.2.0)
+# Conix FPS AI — Universal Android starter (v0.3.0)
 
 Supports separate profile names for **FPS Strike Ops** and **Cover Fire**, user-entered normalized control coordinates, explicit Android screen-capture consent, timestamped event CSV logging, and a user-enabled AccessibilityService gesture foundation. Includes an ML data preparation and behavior-cloning starter pipeline.
 
