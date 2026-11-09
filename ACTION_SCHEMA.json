@@ -1,0 +1,45 @@
+{
+  "actions": [
+    {
+      "id": 0,
+      "name": "NO_OP"
+    },
+    {
+      "id": 1,
+      "name": "MOVE_FORWARD"
+    },
+    {
+      "id": 2,
+      "name": "MOVE_BACK"
+    },
+    {
+      "id": 3,
+      "name": "AIM_LEFT"
+    },
+    {
+      "id": 4,
+      "name": "AIM_RIGHT"
+    },
+    {
+      "id": 5,
+      "name": "FIRE"
+    },
+    {
+      "id": 6,
+      "name": "ADS"
+    },
+    {
+      "id": 7,
+      "name": "RELOAD"
+    },
+    {
+      "id": 8,
+      "name": "JUMP"
+    },
+    {
+      "id": 9,
+      "name": "CROUCH"
+    }
+  ],
+  "note": "Initial discrete action vocabulary. Bind to manually calibrated per-game controls; extend only after collecting correctly synchronized labels."
+}
