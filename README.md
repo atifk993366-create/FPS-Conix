@@ -1,4 +1,4 @@
-# Conix FPS AI — Universal Android starter (v0.3.0)
+# Conix FPS AI — Universal Android starter (v0.4.0)
 
 Supports separate profile names for **FPS Strike Ops** and **Cover Fire**, user-entered normalized control coordinates, explicit Android screen-capture consent, timestamped event CSV logging, and a user-enabled AccessibilityService gesture foundation. Includes an ML data preparation and behavior-cloning starter pipeline.
 
@@ -16,3 +16,8 @@ Not complete: automatic reading of arbitrary gameplay touch events, live vision 
 
 ## Safety / permissions
 Screen capture uses Android's system consent prompt. Gesture dispatch requires the user to manually enable Conix FPS AI under Android Accessibility settings. Use only in offline game modes where automation is permitted. A visible stop mechanism and user supervision should be retained during testing.
+
+## v0.4.0
+- Fixed crash on 'Open control calibration' (activity was missing from the manifest).
+- Unlimited custom game profiles and custom controls; calibrate by tapping on a game screenshot.
+- Each recording writes `Game_session.mp4` + `Game_session.profile.json`; see `ml/README.md` for training.
