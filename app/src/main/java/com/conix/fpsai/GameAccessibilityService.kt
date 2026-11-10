@@ -4,6 +4,8 @@ import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.content.Intent
 import android.graphics.Path
+import android.util.DisplayMetrics
+import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 
 class GameAccessibilityService : AccessibilityService() {
@@ -17,10 +19,14 @@ class GameAccessibilityService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
     override fun onInterrupt() {}
 
-    // Only called from a user-initiated action. Coordinates are normalized 0..1.
+    // Only called from a user-initiated action. x,y are normalized 0..1 of the LANDSCAPE screen.
+    @Suppress("DEPRECATION")
     fun tapNormalized(x: Float, y: Float, durationMs: Long = 90L, callback: (() -> Unit)? = null) {
-        val dm = resources.displayMetrics
-        val path = Path().apply { moveTo(x.coerceIn(0f, 1f) * dm.widthPixels, y.coerceIn(0f, 1f) * dm.heightPixels) }
+        val dm = DisplayMetrics()
+        (getSystemService(WINDOW_SERVICE) as WindowManager).defaultDisplay.getRealMetrics(dm)
+        val w = maxOf(dm.widthPixels, dm.heightPixels)
+        val h = minOf(dm.widthPixels, dm.heightPixels)
+        val path = Path().apply { moveTo(x.coerceIn(0f, 1f) * w, y.coerceIn(0f, 1f) * h) }
         val gesture = GestureDescription.Builder()
             .addStroke(GestureDescription.StrokeDescription(path, 0L, durationMs.coerceIn(40L, 500L)))
             .build()

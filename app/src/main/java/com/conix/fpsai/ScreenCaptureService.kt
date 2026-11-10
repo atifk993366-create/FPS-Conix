@@ -95,7 +95,8 @@ class ScreenCaptureService : Service() {
         EventLogger.newSession()
         EventLogger.screenW = w
         EventLogger.screenH = h
-        val file = File(dir, "${ProfileStore.game(this).replace(" ", "_")}_${EventLogger.sessionId}.mp4")
+        val file = File(dir, "${ProfileStore.safe(ProfileStore.game(this))}_${EventLogger.sessionId}.mp4")
+        try { ProfileStore.exportProfile(this, EventLogger.sessionId, w, h) } catch (e: Exception) {}
         val rec = if (Build.VERSION.SDK_INT >= 31) MediaRecorder(this) else MediaRecorder()
         recorder = rec
         try {
