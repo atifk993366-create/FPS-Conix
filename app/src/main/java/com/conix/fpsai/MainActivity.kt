@@ -112,7 +112,7 @@ class MainActivity : Activity() {
             startService(Intent(this@MainActivity, ScreenCaptureService::class.java).setAction(ScreenCaptureService.STOP))
             status.text = "Capture stop requested." } })
         box.addView(Button(this).apply { text = "Where are my files?"; setOnClickListener {
-            status.text = "Android/data/com.conix.fpsai/files/demonstrations: for each recording you get Game_session.mp4 + Game_session.profile.json (copy BOTH to Google Drive for training) and actions.csv." } })
+            status.text = "Android/data/com.conix.fpsai/files/demonstrations: for each recording you get Game_session.mp4 + Game_session.profile.json (copy BOTH to Google Drive for training) and events.csv." } })
         box.addView(TextView(this).apply {
             text = "Safety: use only in offline games where automation is permitted. Android requires explicit screen-capture approval and explicit Accessibility enablement. This app does not secretly observe or control other apps. A STOP button is also in the recording notification."
             textSize = 13f; setPadding(0, 18, 0, 0)
