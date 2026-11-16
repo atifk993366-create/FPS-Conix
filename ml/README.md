@@ -6,4 +6,5 @@
 
 How it works: see the docstring in `conix_pipeline.py`. Taps are read from the visible "Show taps" dots in each calibrated
 control's screen region; the control regions are greyed out in the model input so it cannot cheat by reading the dots.
+Training: cell 4 runs leave-one-recording-out cross-validation (honest per-map scores + thresholds) and then trains the final model on all recordings.
 Not included yet: aim/look (camera drag) labels, on-device inference, autonomous control.
